@@ -1,9 +1,9 @@
 class CommentsController < ApplicationController
-  # before_action :authenticate_user!, :only => [:new]
-  #
-  # before_action :only => [:edit] do
-  #   redirect_to '/' unless is_admin?
-  # end
+  before_action :authenticate_user!, :only => [:new]
+
+  before_action :only => [:edit] do
+    redirect_to '/' unless is_admin?
+  end
 
   def new
     @product = Product.find(params[:product_id])
@@ -43,6 +43,6 @@ class CommentsController < ApplicationController
 
   private
   def comment_params
-    params.require(:comment).permit(:author, :content)
+    params.require(:comment).permit( :title, :author, :content)
   end
 end

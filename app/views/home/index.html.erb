@@ -1,1 +1,8 @@
-<h1>TEST</h1>
+<h1>Hello!!</h1>
+
+Products will appear here:
+<% @products.each do |product| %>
+  <p><%= link_to product.name, user_path(product.user_id)  %></p>
+  <%= product.user_id %>
+  <h5><%= product.name %></h5>
+<% end %>

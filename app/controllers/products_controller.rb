@@ -1,9 +1,9 @@
 class ProductsController < ApplicationController
-  # before_action :authenticate_user!, :only => [:new]
+  before_action :authenticate_user!, :only => [:new]
 
-  # before_action :only => [:edit] do
-  #   redirect_to '/' unless is_admin? || is_current_user?
-  # end
+  before_action :only => [:edit] do
+    redirect_to '/' unless is_admin? || is_current_user?
+  end
 
   def show
     @product = Product.find(params[:id])
@@ -47,6 +47,6 @@ class ProductsController < ApplicationController
 
   private
   def product_params
-    params.require(:product).permit(:name, :description, :avatar)
+    params.require(:product).permit(:name, :description, :price)
   end
 end
