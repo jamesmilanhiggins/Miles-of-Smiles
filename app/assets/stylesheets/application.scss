@@ -1,6 +1,12 @@
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
 
+body {
+  background-image: image-url('assets/DJI_0049.jpg');
+
+}
+
+
 /*flash*/
 .alert-error {
     background-color: #f2dede;

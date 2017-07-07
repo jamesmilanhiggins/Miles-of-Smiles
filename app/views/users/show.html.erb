@@ -3,23 +3,24 @@
 <%= @user.username %>
 <br>
 <%= @user.email %>
-<%= image_tag(@user.avatar.url(:thumb)) %>
+<br>
+<hr>
+<% if is_admin?  %>
+  <%= link_to "Add a New Product", new_user_product_path(@user) %>
+<% end %>
 
 
-<hr>
-<%= link_to "Add Product to THIS SITE", new_user_product_path(@user) %>
-<hr>
 <h3>Products you have added</h3>
 
 <% @user.products.each do |product| %>
 
-  <%= link_to product.name, product_path(product) %>
+  Name: <%= link_to product.name, product_path(product) %>
   <br>
-  <%= product.name %>
+
   <br>
-  <%= product.description %>
+  Description:<%= product.description %>
   <br>
-  <%= product.price %>
+  Price: $<%= product.price %>
 
   <% if is_admin?  %>
 
