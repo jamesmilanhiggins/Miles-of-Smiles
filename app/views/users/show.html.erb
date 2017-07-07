@@ -1,8 +1,8 @@
 <h1>User Profile Page</h1>
 
-<%= @user.username %>
+Your username: <%= @user.username %>
 <br>
-<%= @user.email %>
+Your email: <%= @user.email %>
 <br>
 <hr>
 <% if is_admin?  %>
@@ -13,25 +13,29 @@
 <h3>Products you have added</h3>
 
 <% @user.products.each do |product| %>
-
-  <%= link_to "View details page", product_path(product) %>
-  Name: <%= link_to product.name, product_path(product) %>
-  <br>
-
-  Description:<%= product.description %>
-  <br>
-  Price: $<%= product.price %>
+<div class="polaroid">
   <%= image_tag product.image %>
-  <% if is_admin?  %>
+  <div class="myContent">
+    <%= link_to "View details page", product_path(product) %>
+    <br>
+    Name: <%= product.name%>
+    <br>
+    Description: <%= product.description%>
+    <br>
+    Price: <%= product.price%>
+    <br>
+    <% if is_admin?  %>
 
 
     <%= link_to "Edit Product", edit_user_product_path(@user, product) %> |
     <%= link_to "Delete this Product", user_product_path(@user, product),
-            :data => {:confirm => "Are you sure?",
-              :method => "delete"} %>
+    :data => {:confirm => "Are you sure?",
+      :method => "delete"} %>
 
-    <% end %>
+      <% end %>
 
 
-  <hr>
+      <hr>
+  </div>
+</div>
 <% end %>

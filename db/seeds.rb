@@ -6,9 +6,10 @@ user.username = "james"
 user.email = "james@gmail.com"
 user.password = '123456'
 user.admin = true
+user.id = 1
 user.save!
 
-# 
+#
 # 5.times do |index|
 #   User.create!(username: Faker::HarryPotter.character,
 #                   email: Faker::Internet.email,
