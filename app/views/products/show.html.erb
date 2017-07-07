@@ -6,6 +6,10 @@
 <%= @product.name%>
 <%= @product.description%>
 <%= @product.price%>
+<div class="myImage">
+  <%= image_tag @product.image %>
+<div>
+
 <hr>
 <% if @product.comments.any? %>
   <% @product.comments.each do |comment| %>
