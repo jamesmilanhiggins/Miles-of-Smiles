@@ -1,9 +1,6 @@
+``<%if user_signed_in?  %>
 <h1>All Photos on Display</h1>
-
-
-
 <% @products.each do |product| %>
-
 
   <br>
   <div class="polaroid">
@@ -31,4 +28,9 @@
 
 
   <hr>
+
+<% end %>
+<% else %>
+
+<h1> Please Sign Up or Login to view images</h1>
 <% end %>
