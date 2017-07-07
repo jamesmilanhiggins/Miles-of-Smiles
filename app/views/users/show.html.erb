@@ -14,14 +14,14 @@
 
 <% @user.products.each do |product| %>
 
+  <%= link_to "View details page", product_path(product) %>
   Name: <%= link_to product.name, product_path(product) %>
   <br>
 
-  <br>
   Description:<%= product.description %>
   <br>
   Price: $<%= product.price %>
-
+  <%= image_tag product.image %>
   <% if is_admin?  %>
 
 

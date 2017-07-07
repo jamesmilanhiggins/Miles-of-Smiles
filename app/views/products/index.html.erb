@@ -1,14 +1,21 @@
-<h1>LIST OF ALL PRODUCTS</h1>
+<h1>James' Photo Display</h1>
 
 <% @products.each do |product| %>
 
-  <%= link_to product.name, product_path(product) %>
+
   <br>
-  <%= product.name %>
-  <br>
-  <%= product.description %>
-  <br>
-  <%= product.price %>
+  <div class="myImage">
+    <%= image_tag product.image %>
+    <div class="myContent">
+      <%= link_to product.name, product_path(product) %>
+      <br>
+      <%= product.name %>
+      <br>
+      <%= product.description %>
+      <br>
+      <%= product.price %>
+    </div>
+  <div>
 
   <% if is_admin?  %>
 

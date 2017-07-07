@@ -2,13 +2,30 @@
 @import 'bootstrap';
 
 body {
-  background-image: image-url('assets/DJI_0049.jpg');
-
+  background-image: image-url('DJI_0015.JPG');
+  max-width: 100%;
+  height: auto;
+  color: white;
+}
+.jumbotron {
+    background-image: image-url('DJI_0049.JPG');
 }
 
 img {
   width: 300px;
   height: 300px;
+}
+.polaroid {
+  width: 300px;
+  color: black;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-bottom: 25px
+}
+
+div.myContent {
+    text-align: center;
+    padding: 10px 20px;
 }
 /*flash*/
 .alert-error {
