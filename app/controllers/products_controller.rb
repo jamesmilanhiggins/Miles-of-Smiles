@@ -4,6 +4,9 @@ class ProductsController < ApplicationController
   before_action :only => [:edit] do
     redirect_to '/' unless is_admin? || is_current_user?
   end
+  def index
+    @products = Product.all
+  end
 
   def show
     @product = Product.find(params[:id])

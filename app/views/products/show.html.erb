@@ -1,7 +1,8 @@
-<h1>Product Page</h1>
+<h1> Specific Product Page</h1>
 <br>
 
-
+<%= link_to "Add Comment", new_product_comment_path(@product) %>
+<br>
 <%= @product.name%>
 <%= @product.description%>
 <%= @product.price%>
@@ -28,4 +29,3 @@
 <% else %>
 <p>There are no comments yet!</p>
 <% end %>
-<%= link_to "Add Comment", new_product_comment_path(@product) %>

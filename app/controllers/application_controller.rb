@@ -9,13 +9,13 @@ class ApplicationController < ActionController::Base
     current_user && current_user.admin
   end
 
-  def is_current_user?
-    if current_user
-      current_user.id == product.user_id
-    else
-      false
-    end
-  end
+  # def is_current_user?
+  #   if current_user
+  #     current_user.id == product.user.id
+  #   else
+  #     false
+  #   end
+  # end
 
 # Custom parameters / Strong Parameters
   before_action :configure_permitted_parameters, if: :devise_controller?

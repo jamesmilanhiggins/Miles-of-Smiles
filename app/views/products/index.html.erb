@@ -1,17 +1,10 @@
-<h1>User Profile Page</h1>
-
-<%= @user.username %>
-<br>
-<%= @user.email %>
-<%= image_tag(@user.avatar.url(:thumb)) %>
+<h1>LIST OF ALL PRODUCTS</h1>
 
 
 <hr>
-<%= link_to "Add Product to THIS SITE", new_user_product_path(@user) %>
-<hr>
-<h3>Products you have added</h3>
 
-<% @user.products.each do |product| %>
+
+<% @products.each do |product| %>
 
   <%= link_to product.name, product_path(product) %>
   <br>
