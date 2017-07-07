@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
 
   def is_current_user?
     if current_user
-      current_user.id == image.user_id
+      current_user.id == product.user_id
     else
       false
     end
